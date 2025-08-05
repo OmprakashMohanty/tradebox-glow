@@ -61,7 +61,29 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				tradebox: {
+					background: 'hsl(var(--tradebox-background))',
+					secondary: 'hsl(var(--tradebox-secondary))',
+					surface: 'hsl(var(--tradebox-surface))'
+				},
+				gradient: {
+					purple: 'hsl(var(--gradient-purple))',
+					cyan: 'hsl(var(--gradient-cyan))',
+					pink: 'hsl(var(--gradient-pink))',
+					blue: 'hsl(var(--gradient-blue))'
+				},
+				brand: {
+					primary: 'hsl(var(--brand-primary))',
+					secondary: 'hsl(var(--brand-secondary))',
+					accent: 'hsl(var(--brand-accent))'
 				}
+			},
+			backgroundImage: {
+				'gradient-primary': 'linear-gradient(135deg, hsl(var(--gradient-purple)), hsl(var(--gradient-cyan)))',
+				'gradient-accent': 'linear-gradient(135deg, hsl(var(--gradient-pink)), hsl(var(--gradient-purple)))',
+				'gradient-blue': 'linear-gradient(135deg, hsl(var(--gradient-blue)), hsl(var(--gradient-cyan)))',
+				'gradient-mesh': 'radial-gradient(circle at 20% 20%, hsl(var(--gradient-purple)) 0%, transparent 50%), radial-gradient(circle at 80% 80%, hsl(var(--gradient-cyan)) 0%, transparent 50%), radial-gradient(circle at 40% 40%, hsl(var(--gradient-pink)) 0%, transparent 50%)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +106,62 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'slide-up': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(30px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0px)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
+				},
+				'glow': {
+					'0%, 100%': {
+						boxShadow: '0 0 20px hsl(var(--gradient-purple) / 0.3)'
+					},
+					'50%': {
+						boxShadow: '0 0 40px hsl(var(--gradient-purple) / 0.6)'
+					}
+				},
+				'slide-in-right': {
+					'0%': {
+						transform: 'translateX(100%)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'translateX(0)',
+						opacity: '1'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.6s ease-out',
+				'slide-up': 'slide-up 0.6s ease-out',
+				'float': 'float 3s ease-in-out infinite',
+				'glow': 'glow 2s ease-in-out infinite',
+				'slide-in-right': 'slide-in-right 0.3s ease-out'
 			}
 		}
 	},
