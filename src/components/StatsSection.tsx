@@ -5,35 +5,35 @@ const StatsSection = () => {
   const stats = [
     {
       icon: Users,
-      value: '500+',
+      value: '--',
       label: 'Experts Signed-up',
       gradient: 'from-gradient-cyan to-gradient-blue',
       delay: 0.1
     },
     {
       icon: TrendingUp,
-      value: '10,000+',
+      value: '--',
       label: 'Customers Onboarded',
       gradient: 'from-gradient-purple to-gradient-pink',
       delay: 0.2
     },
     {
       icon: DollarSign,
-      value: '₹500Cr+',
+      value: '--',
       label: 'Transactions Value',
       gradient: 'from-gradient-pink to-gradient-cyan',
       delay: 0.3
     },
     {
       icon: Briefcase,
-      value: '1,200+',
+      value: '--',
       label: 'Model Portfolios',
       gradient: 'from-gradient-blue to-gradient-purple',
       delay: 0.4
     },
     {
       icon: MessageSquare,
-      value: '150+',
+      value: '--',
       label: 'Telegram Channels Integrated',
       gradient: 'from-gradient-cyan to-gradient-pink',
       delay: 0.5
@@ -83,9 +83,6 @@ const StatsSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent mb-4">
             TradeBox Stats
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Trusted by thousands of financial professionals across India
-          </p>
         </motion.div>
 
         <motion.div
