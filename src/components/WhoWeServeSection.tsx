@@ -1,33 +1,44 @@
 import { motion } from 'framer-motion';
-import { TrendingUp, Shield } from 'lucide-react';
+import { TrendingUp, Shield, Globe, MessageSquare, FileCheck, Building2 } from 'lucide-react';
 
 const WhoWeServeSection = () => {
   const clientTypes = [
     {
-      icon: TrendingUp,
       title: 'Research Analysts',
-      description: 'SEBI-registered research analysts who provide investment recommendations and market analysis',
-      features: [
-        'Compliance Management',
-        'Research Distribution',
-        'Portfolio Modeling',
-        'Client Analytics'
-      ],
       gradient: 'from-gradient-purple to-gradient-cyan',
       bgGradient: 'from-gradient-purple/20 to-gradient-cyan/20'
     },
     {
-      icon: Shield,
       title: 'Registered Investment Advisors',
-      description: 'SEBI-RIA professionals managing client portfolios and providing investment advisory services',
-      features: [
-        'Portfolio Management',
-        'Risk Assessment',
-        'Client Onboarding',
-        'Performance Tracking'
-      ],
       gradient: 'from-gradient-pink to-gradient-purple',
       bgGradient: 'from-gradient-pink/20 to-gradient-purple/20'
+    }
+  ];
+
+  const integrations = [
+    {
+      icon: Globe,
+      title: 'Website and App API',
+      description: 'Seamless integration with your digital platforms.',
+      gradient: 'from-gradient-cyan to-gradient-blue'
+    },
+    {
+      icon: MessageSquare,
+      title: 'Telegram Automation',
+      description: 'Real-time trade delivery to private groups.',
+      gradient: 'from-gradient-purple to-gradient-pink'
+    },
+    {
+      icon: FileCheck,
+      title: 'E-Signing and Payment Gateway',
+      description: 'Compliance through trusted service partners like Protean and Razorpay.',
+      gradient: 'from-gradient-pink to-gradient-cyan'
+    },
+    {
+      icon: Building2,
+      title: 'Broker API Access',
+      description: 'Connect with brokers like Alice Blue & more.',
+      gradient: 'from-gradient-blue to-gradient-purple'
     }
   ];
 
@@ -50,12 +61,12 @@ const WhoWeServeSection = () => {
               Who We Serve
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Specialized solutions for different categories of SEBI-registered financial professionals
+          <p className="text-xl text-white max-w-3xl mx-auto">
+            Empowering SEBI-Registered Advisors
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-8 mb-20">
           {clientTypes.map((client, index) => (
             <motion.div
               key={index}
@@ -73,53 +84,11 @@ const WhoWeServeSection = () => {
               {/* Glass morphism overlay */}
               <div className="absolute inset-0 bg-white/5 rounded-3xl backdrop-blur-sm"></div>
               
-              <div className="relative z-10">
-                {/* Icon */}
-                <motion.div 
-                  className={`w-20 h-20 bg-gradient-to-r ${client.gradient} rounded-2xl flex items-center justify-center mb-8 shadow-lg`}
-                  whileHover={{ 
-                    rotate: 360,
-                    scale: 1.1
-                  }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <client.icon size={40} className="text-white" />
-                </motion.div>
-
+              <div className="relative z-10 text-center">
                 {/* Content */}
-                <h3 className="text-3xl font-bold text-white mb-4">
+                <h3 className="text-3xl font-bold text-white">
                   {client.title}
                 </h3>
-                
-                <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                  {client.description}
-                </p>
-
-                {/* Features */}
-                <div className="space-y-3">
-                  {client.features.map((feature, featureIndex) => (
-                    <motion.div
-                      key={featureIndex}
-                      className="flex items-center space-x-3"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.2 + featureIndex * 0.1 }}
-                      viewport={{ once: true }}
-                    >
-                      <div className={`w-2 h-2 bg-gradient-to-r ${client.gradient} rounded-full`}></div>
-                      <span className="text-gray-300">{feature}</span>
-                    </motion.div>
-                  ))}
-                </div>
-
-                {/* Learn More Button */}
-                <motion.button
-                  className={`mt-8 px-6 py-3 bg-gradient-to-r ${client.gradient} text-white rounded-lg font-semibold hover:shadow-lg transition-all duration-300`}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Learn More
-                </motion.button>
               </div>
 
               {/* Animated background glow */}
@@ -138,35 +107,78 @@ const WhoWeServeSection = () => {
           ))}
         </div>
 
-        {/* Bottom Stats */}
+        {/* Powerful Integrations Section */}
         <motion.div
-          className="mt-20 text-center"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { value: '2.5k+', label: 'RIA Registered' },
-              { value: '100k+', label: 'Onboardings' },
-              { value: '200+', label: 'Broke APIs Created' },
-              { value: '1M+', label: 'Recommendations' }
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                className="group"
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 400 }}
-              >
-                <div className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-gradient-purple to-gradient-cyan bg-clip-text text-transparent group-hover:from-gradient-pink group-hover:to-gradient-purple transition-all duration-300">
-                  {stat.value}
-                </div>
-                <div className="text-gray-400 text-sm mt-2">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
+          <h2 className="text-4xl lg:text-6xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-gradient-purple to-gradient-cyan bg-clip-text text-transparent">
+              Powerful Integrations
+            </span>
+          </h2>
         </motion.div>
+
+        <div className="grid lg:grid-cols-2 gap-8">
+          {integrations.map((integration, index) => (
+            <motion.div
+              key={index}
+              className="group relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-all duration-500"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ 
+                scale: 1.02,
+                y: -5,
+                transition: { type: "spring", stiffness: 300 }
+              }}
+            >
+              {/* Glass morphism overlay */}
+              <div className="absolute inset-0 bg-white/5 rounded-3xl backdrop-blur-sm"></div>
+              
+              <div className="relative z-10 flex items-start space-x-4">
+                {/* Icon */}
+                <motion.div 
+                  className={`w-16 h-16 bg-gradient-to-r ${integration.gradient} rounded-2xl flex items-center justify-center shadow-lg flex-shrink-0`}
+                  whileHover={{ 
+                    rotate: 360,
+                    scale: 1.1
+                  }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <integration.icon size={32} className="text-white" />
+                </motion.div>
+
+                {/* Content */}
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-2">
+                    {integration.title}
+                  </h3>
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    {integration.description}
+                  </p>
+                </div>
+              </div>
+
+              {/* Animated background glow */}
+              <motion.div 
+                className={`absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-10 transition-opacity duration-500 bg-gradient-to-r ${integration.gradient} blur-xl`}
+                animate={{
+                  scale: [1, 1.02, 1],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
