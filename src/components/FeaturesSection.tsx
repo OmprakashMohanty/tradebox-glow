@@ -173,7 +173,10 @@ const FeaturesSection = () => {
               >
                 <div className="relative z-10">
                   <div className="mb-6">
-                    <features[6].icon className={`w-12 h-12 ${features[6].iconColor}`} />
+                    {(() => {
+                      const IconComponent = features[6].icon;
+                      return <IconComponent className={`w-12 h-12 ${features[6].iconColor}`} />;
+                    })()}
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-4">
                     {features[6].title}
