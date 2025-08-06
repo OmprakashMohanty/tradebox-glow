@@ -1,39 +1,39 @@
 import { motion } from 'framer-motion';
-import { Users, TrendingUp, DollarSign, Briefcase, MessageSquare } from 'lucide-react';
+import { Users, TrendingUp, IndianRupee, Briefcase, MessageSquare } from 'lucide-react';
 
 const StatsSection = () => {
   const stats = [
     {
       icon: Users,
-      value: '--',
+      value: '83',
       label: 'Experts Signed-up',
       gradient: 'from-gradient-cyan to-gradient-blue',
       delay: 0.1
     },
     {
       icon: TrendingUp,
-      value: '--',
+      value: '101',
       label: 'Customers Onboarded',
       gradient: 'from-gradient-purple to-gradient-pink',
       delay: 0.2
     },
     {
-      icon: DollarSign,
-      value: '--',
+      icon: IndianRupee,
+      value: '₹500k',
       label: 'Transactions Value',
       gradient: 'from-gradient-pink to-gradient-cyan',
       delay: 0.3
     },
     {
       icon: Briefcase,
-      value: '--',
+      value: '10',
       label: 'Model Portfolios',
       gradient: 'from-gradient-blue to-gradient-purple',
       delay: 0.4
     },
     {
       icon: MessageSquare,
-      value: '--',
+      value: '45',
       label: 'Telegram Channels Integrated',
       gradient: 'from-gradient-cyan to-gradient-pink',
       delay: 0.5

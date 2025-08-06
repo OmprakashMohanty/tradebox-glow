@@ -6,11 +6,7 @@ import { Button } from '@/components/ui/button';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'Pricing', href: '#pricing' },
-    { label: 'Blogs', href: '#blogs' }
-  ];
+  const navItems = [];
 
   return (
     <motion.header 
@@ -51,17 +47,6 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Desktop CTA Button */}
-          <motion.div 
-            className="hidden md:block"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.6 }}
-          >
-            <Button className="bg-gradient-blue text-white px-6 py-2 rounded-lg hover:shadow-lg hover:shadow-gradient-blue/30 transition-all duration-300">
-              Get Started
-            </Button>
-          </motion.div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
@@ -101,15 +86,6 @@ const Header = () => {
                   {item.label}
                 </motion.a>
               ))}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3 }}
-              >
-                <Button className="w-full bg-gradient-blue text-white px-6 py-3 rounded-lg hover:shadow-lg hover:shadow-gradient-blue/30 transition-all duration-300">
-                  Get Started
-                </Button>
-              </motion.div>
             </nav>
           </motion.div>
         )}

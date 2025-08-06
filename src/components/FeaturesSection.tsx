@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Users, Briefcase, Brain, Share2, BarChart3, Settings, Bot } from 'lucide-react';
+import { Users, Briefcase, Brain, Share2, Settings, Bot } from 'lucide-react';
 
 const FeaturesSection = () => {
   const features = [
@@ -30,13 +30,6 @@ const FeaturesSection = () => {
       description: 'Distribute research reports and recommendations to clients efficiently',
       gradient: 'from-gradient-blue/20 to-gradient-cyan/20',
       iconColor: 'text-gradient-blue'
-    },
-    {
-      icon: BarChart3,
-      title: 'CRM & Insights',
-      description: 'Comprehensive client relationship management with detailed analytics',
-      gradient: 'from-gradient-cyan/20 to-gradient-purple/20',
-      iconColor: 'text-gradient-cyan'
     },
     {
       icon: Settings,
@@ -130,9 +123,9 @@ const FeaturesSection = () => {
             ))}
           </div>
 
-          {/* Second row - 3 cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.slice(3, 6).map((feature, index) => (
+          {/* Second row - 2 cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {features.slice(3, 5).map((feature, index) => (
               <motion.div
                 key={index + 3}
                 className={`group relative bg-gradient-to-br ${feature.gradient} backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300`}
@@ -163,7 +156,7 @@ const FeaturesSection = () => {
           <div className="flex justify-center">
             <div className="w-full max-w-sm">
               <motion.div
-                className={`group relative bg-gradient-to-br ${features[6].gradient} backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300`}
+                className={`group relative bg-gradient-to-br ${features[5].gradient} backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300`}
                 variants={cardVariants}
                 whileHover={{ 
                   scale: 1.05,
@@ -174,15 +167,15 @@ const FeaturesSection = () => {
                 <div className="relative z-10">
                   <div className="mb-6">
                     {(() => {
-                      const IconComponent = features[6].icon;
-                      return <IconComponent className={`w-12 h-12 ${features[6].iconColor}`} />;
+                      const IconComponent = features[5].icon;
+                      return <IconComponent className={`w-12 h-12 ${features[5].iconColor}`} />;
                     })()}
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-4">
-                    {features[6].title}
+                    {features[5].title}
                   </h3>
                   <p className="text-gray-200 leading-relaxed">
-                    {features[6].description}
+                    {features[5].description}
                   </p>
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-2xl group-hover:from-white/10 transition-all duration-300" />
