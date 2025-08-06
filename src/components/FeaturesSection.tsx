@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Users, Briefcase, Brain, Share2, Settings, Bot } from 'lucide-react';
+import { Users, Briefcase, Brain, Share2, Settings, Zap } from 'lucide-react';
 
 const FeaturesSection = () => {
   const features = [
@@ -39,7 +39,7 @@ const FeaturesSection = () => {
       iconColor: 'text-gradient-purple'
     },
     {
-      icon: Bot,
+      icon: Zap,
       title: 'Algo Trading Support',
       description: 'Algorithmic trading capabilities with automated execution strategies',
       gradient: 'from-gradient-pink/20 to-gradient-cyan/20',
