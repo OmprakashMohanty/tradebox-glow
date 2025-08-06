@@ -62,7 +62,7 @@ const WhoWeServeSection = () => {
             </span>
           </h2>
           <p className="text-xl max-w-3xl mx-auto" style={{ color: '#ffffff' }}>
-            Empowering SEBI-Registered Advisors
+            Empowering SEBI-Registered Experts
           </p>
         </motion.div>
 
