@@ -23,8 +23,9 @@ const Header = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400 }}
           >
-            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">TB</span>
+            <div className="w-10 h-10 bg-gradient-to-br from-gradient-cyan to-gradient-blue rounded-xl flex items-center justify-center shadow-lg relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+              <span className="text-white font-bold text-lg relative z-10">TB</span>
             </div>
             <span className="text-xl font-bold text-white">TradeBox</span>
           </motion.div>
