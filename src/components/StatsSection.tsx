@@ -5,38 +5,31 @@ const StatsSection = () => {
   const stats = [
     {
       icon: Users,
-      value: '83',
-      label: 'Experts Signed-up',
-      gradient: 'from-gradient-cyan to-gradient-blue',
+      value: '2.5k+',
+      label: 'RIA Registered',
+      gradient: 'from-gradient-purple to-gradient-cyan',
       delay: 0.1
     },
     {
       icon: TrendingUp,
-      value: '101',
-      label: 'Customers Onboarded',
-      gradient: 'from-gradient-purple to-gradient-pink',
+      value: '100k+',
+      label: 'Onboardings',
+      gradient: 'from-gradient-cyan to-gradient-blue',
       delay: 0.2
     },
     {
-      icon: IndianRupee,
-      value: '₹500k',
-      label: 'Transactions Value',
-      gradient: 'from-gradient-pink to-gradient-cyan',
+      icon: Briefcase,
+      value: '200+',
+      label: 'Broker APIs Created',
+      gradient: 'from-gradient-blue to-gradient-purple',
       delay: 0.3
     },
     {
-      icon: Briefcase,
-      value: '10',
-      label: 'Model Portfolios',
-      gradient: 'from-gradient-blue to-gradient-purple',
-      delay: 0.4
-    },
-    {
       icon: MessageSquare,
-      value: '45',
-      label: 'Telegram Channels Integrated',
-      gradient: 'from-gradient-cyan to-gradient-pink',
-      delay: 0.5
+      value: '500+',
+      label: 'Model Portfolios',
+      gradient: 'from-gradient-pink to-gradient-purple',
+      delay: 0.4
     }
   ];
 
@@ -90,7 +83,7 @@ const StatsSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
           {stats.map((stat, index) => (
             <motion.div
