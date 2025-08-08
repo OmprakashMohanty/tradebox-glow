@@ -75,6 +75,30 @@ const HeroSection = () => {
               </Button>
             </motion.div>
 
+            {/* Stats */}
+            <motion.div 
+              className="grid grid-cols-2 sm:grid-cols-4 gap-8 pt-8"
+              variants={itemVariants}
+            >
+              {[
+                { value: '2.5k+', label: 'RIA Registered' },
+                { value: '100k+', label: 'Onboardings' },
+                { value: '200+', label: 'Broke APIs Created' },
+                { value: '500+', label: 'Model Portfolios' }
+              ].map((stat, index) => (
+                <motion.div 
+                  key={index}
+                  className="text-center"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-gradient-purple to-gradient-cyan bg-clip-text text-transparent">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-gray-400">{stat.label}</div>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
 
           {/* Right Column - Dashboard Mockup */}
