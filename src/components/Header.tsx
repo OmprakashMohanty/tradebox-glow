@@ -11,7 +11,7 @@ const Header = () => {
 
   return (
     <motion.header 
-      className="fixed top-0 left-0 right-0 z-50 bg-tradebox-background/90 backdrop-blur-md border-b border-border/20"
+      className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/20"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
@@ -72,7 +72,7 @@ const Header = () => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className="md:hidden bg-tradebox-secondary border-t border-border/20"
+            className="md:hidden bg-secondary border-t border-border/20"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}

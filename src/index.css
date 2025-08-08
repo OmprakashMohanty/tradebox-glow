@@ -10,39 +10,39 @@ All colors MUST be HSL.
   :root {
     /* Light theme */
     --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 222.2 84% 4.9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --popover-foreground: 222.2 84% 4.9%;
 
     --primary: 259 94% 51%;
-    --primary-foreground: 0 0% 98%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
 
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
     --ring: 259 94% 51%;
 
     --radius: 0.5rem;
 
     /* Custom color tokens for light theme */
     --tradebox-background: 0 0% 100%;
-    --tradebox-secondary: 240 4.8% 95.9%;
-    --tradebox-surface: 240 4.8% 97.9%;
+    --tradebox-secondary: 210 40% 98%;
+    --tradebox-surface: 210 40% 96%;
     
     /* Gradient colors */
     --gradient-purple: 259 94% 51%;
@@ -51,8 +51,8 @@ All colors MUST be HSL.
     --gradient-blue: 217 91% 60%;
     
     /* Glass morphism for light theme */
-    --glass-bg: 0 0% 100% / 0.8;
-    --glass-border: 240 5.9% 90% / 0.3;
+    --glass-bg: 0 0% 100% / 0.95;
+    --glass-border: 214.3 31.8% 91.4% / 0.5;
     
     /* Brand colors */
     --brand-primary: 259 94% 51%;
