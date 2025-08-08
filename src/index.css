@@ -8,7 +8,60 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Dark theme as default */
+    /* Light theme */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 259 94% 51%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 259 94% 51%;
+
+    --radius: 0.5rem;
+
+    /* Custom color tokens for light theme */
+    --tradebox-background: 0 0% 100%;
+    --tradebox-secondary: 240 4.8% 95.9%;
+    --tradebox-surface: 240 4.8% 97.9%;
+    
+    /* Gradient colors */
+    --gradient-purple: 259 94% 51%;
+    --gradient-cyan: 189 94% 57%;
+    --gradient-pink: 323 73% 64%;
+    --gradient-blue: 217 91% 60%;
+    
+    /* Glass morphism for light theme */
+    --glass-bg: 0 0% 100% / 0.8;
+    --glass-border: 240 5.9% 90% / 0.3;
+    
+    /* Brand colors */
+    --brand-primary: 259 94% 51%;
+    --brand-secondary: 189 94% 57%;
+    --brand-accent: 323 73% 64%;
+  }
+
+  .dark {
+    /* Dark theme */
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
 
@@ -37,27 +90,14 @@ All colors MUST be HSL.
     --input: 240 3.7% 15.9%;
     --ring: 259 94% 51%;
 
-    --radius: 0.5rem;
-
-    /* Custom color tokens */
+    /* Custom color tokens for dark theme */
     --tradebox-background: 240 10% 3.9%;
     --tradebox-secondary: 240 5% 10.2%;
     --tradebox-surface: 240 6% 13%;
     
-    /* Gradient colors */
-    --gradient-purple: 259 94% 51%;
-    --gradient-cyan: 189 94% 57%;
-    --gradient-pink: 323 73% 64%;
-    --gradient-blue: 217 91% 60%;
-    
-    /* Glass morphism */
+    /* Glass morphism for dark theme */
     --glass-bg: 240 6% 13% / 0.8;
     --glass-border: 240 10% 25% / 0.3;
-    
-    /* Brand colors */
-    --brand-primary: 259 94% 51%;
-    --brand-secondary: 189 94% 57%;
-    --brand-accent: 323 73% 64%;
   }
 }
 
