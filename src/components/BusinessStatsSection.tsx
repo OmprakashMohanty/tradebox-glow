@@ -1,32 +1,44 @@
 import { motion } from 'framer-motion';
+import { useCountAnimation } from '@/hooks/useCountAnimation';
 
 const BusinessStatsSection = () => {
   const stats = [
     {
-      value: '2.5k+',
+      value: 2500,
+      displayValue: '2.5k+',
       label: 'RIA Registered',
       color: 'text-purple-400',
-      delay: 0.1
+      delay: 100
     },
     {
-      value: '100k+',
+      value: 100000,
+      displayValue: '100k+',
       label: 'Onboardings',
       color: 'text-blue-400',
-      delay: 0.2
+      delay: 200
     },
     {
-      value: '200+',
-      label: 'Broke APIs Created',
+      value: 200,
+      displayValue: '200+',
+      label: 'Broker APIs Created',
       color: 'text-purple-400',
-      delay: 0.3
+      delay: 300
     },
     {
-      value: '500+',
+      value: 500,
+      displayValue: '500+',
       label: 'Model Portfolios',
       color: 'text-cyan-400',
-      delay: 0.4
+      delay: 400
     }
   ];
+
+  const formatNumber = (num: number, originalDisplay: string) => {
+    if (originalDisplay.includes('k')) {
+      return `${(num / 1000).toFixed(1)}k+`;
+    }
+    return `${num.toLocaleString()}+`;
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -65,24 +77,33 @@ const BusinessStatsSection = () => {
           viewport={{ once: true }}
           className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
         >
-          {stats.map((stat, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              whileHover={{ 
-                scale: 1.05,
-                transition: { duration: 0.2 }
-              }}
-              className="text-center group"
-            >
-              <div className={`text-4xl md:text-5xl font-bold ${stat.color} mb-2 group-hover:scale-110 transition-transform duration-300`}>
-                {stat.value}
-              </div>
-              <div className="text-gray-300 text-sm md:text-base font-medium">
-                {stat.label}
-              </div>
-            </motion.div>
-          ))}
+          {stats.map((stat, index) => {
+            const AnimatedStat = () => {
+              const { count, ref } = useCountAnimation(stat.value, 2000, stat.delay);
+              
+              return (
+                <motion.div
+                  ref={ref}
+                  key={index}
+                  variants={itemVariants}
+                  whileHover={{ 
+                    scale: 1.05,
+                    transition: { duration: 0.2 }
+                  }}
+                  className="text-center group"
+                >
+                  <div className={`text-4xl md:text-5xl font-bold ${stat.color} mb-2 group-hover:scale-110 transition-transform duration-300`}>
+                    {formatNumber(count, stat.displayValue)}
+                  </div>
+                  <div className="text-gray-300 text-sm md:text-base font-medium">
+                    {stat.label}
+                  </div>
+                </motion.div>
+              );
+            };
+            
+            return <AnimatedStat key={index} />;
+          })}
         </motion.div>
       </div>
     </section>
