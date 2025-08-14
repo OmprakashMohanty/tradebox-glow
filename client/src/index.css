@@ -1,0 +1,390 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hexagon clip-path for logo */
+.clip-path-hexagon {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+/* 3D Perspective for card flipping */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark theme as default */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 259 94% 51%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 259 94% 51%;
+
+    --radius: 0.5rem;
+
+    /* Custom color tokens for dark theme */
+    --tradebox-background: 240 10% 3.9%;
+    --tradebox-secondary: 240 5% 10.2%;
+    --tradebox-surface: 240 6% 13%;
+
+    /* Gradient colors */
+    --gradient-purple: 259 94% 51%;
+    --gradient-cyan: 189 94% 57%;
+    --gradient-pink: 323 73% 64%;
+    --gradient-blue: 217 91% 60%;
+
+    /* Glass morphism for dark theme */
+    --glass-bg: 240 6% 13% / 0.8;
+    --glass-border: 240 10% 25% / 0.3;
+
+    /* Brand colors */
+    --brand-primary: 259 94% 51%;
+    --brand-secondary: 189 94% 57%;
+    --brand-accent: 323 73% 64%;
+  }
+
+  .light {
+    /* Light theme */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 96%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 96%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 259 94% 51%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 259 94% 51%;
+
+    /* Custom color tokens for light theme */
+    --tradebox-background: 0 0% 96%;
+    --tradebox-secondary: 210 40% 98%;
+    --tradebox-surface: 210 40% 96%;
+
+    /* Glass morphism for light theme */
+    --glass-bg: 0 0% 96% / 0.95;
+    --glass-border: 214.3 31.8% 91.4% / 0.5;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-weight: 400; /* Regular for body text */
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-weight: 700; /* Bold for headings */
+  }
+
+  .font-montserrat-regular {
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-weight: 400;
+  }
+
+  .font-montserrat-semibold {
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-weight: 600;
+  }
+
+  .font-montserrat-bold {
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-weight: 700;
+  }
+
+  .font-montserrat-extrabold {
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-weight: 800;
+  }
+
+  /* Light theme specific text colors for trading infographic */
+  .light .trading-text-dark {
+    color: hsl(0 0% 0%) !important;
+  }
+
+  .light .trading-subtext-dark {
+    color: hsl(220 13% 18%) !important;
+  }
+
+  .light .trading-category-dark {
+    color: hsl(0 0% 20%) !important;
+  }
+
+  .light .trading-metric-text-dark {
+    color: hsl(0 0% 15%) !important;
+  }
+
+  /* Light theme specific text colors for hero section */
+  .light .hero-text-dark {
+    color: hsl(0 0% 0%) !important;
+  }
+
+  .light .hero-description-dark {
+    color: hsl(220 13% 15%) !important;
+  }
+
+  .light .hero-gradient-black {
+    background: hsl(0 0% 0%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+  }
+
+  /* Light theme border for trading infographic */
+  .light .infographic-border-dark {
+    border: 2px solid hsl(0 0% 60%) !important;
+  }
+
+  /* Light theme navbar background - match page background */
+  .light .navbar-skyblue {
+    background: hsl(0 0% 96% / 0.9) !important;
+    backdrop-filter: blur(12px) !important;
+  }
+
+  /* Light theme text colors for all sections */
+  .light .section-title-dark {
+    color: hsl(0 0% 0%) !important;
+  }
+
+  .light .section-subtitle-dark {
+    color: hsl(220 13% 25%) !important;
+  }
+
+  .light .section-text-dark {
+    color: hsl(0 0% 15%) !important;
+  }
+
+  .light .card-title-dark {
+    color: hsl(0 0% 0%) !important;
+  }
+
+  .light .card-description-dark {
+    color: hsl(220 13% 30%) !important;
+  }
+
+  .light .stat-label-dark {
+    color: hsl(220 13% 25%) !important;
+  }
+
+  .light .stat-value-dark {
+    color: hsl(0 0% 0%) !important;
+  }
+
+  /* Light theme borders for feature cards */
+  .light .feature-card-border-dark {
+    border: 2px solid hsl(0 0% 60%) !important;
+  }
+
+  /* Light theme borders for other sections */
+  .light .onboarding-card-border-dark {
+    border: 2px solid hsl(0 0% 60%) !important;
+  }
+
+  .light .stats-card-border-dark {
+    border: 2px solid hsl(0 0% 60%) !important;
+  }
+
+  .light .integration-card-border-dark {
+    border: 2px solid hsl(0 0% 60%) !important;
+  }
+
+  .light .serve-card-border-dark {
+    border: 2px solid hsl(0 0% 60%) !important;
+  }
+
+  .light .faq-card-border-dark {
+    border: 2px solid hsl(0 0% 60%) !important;
+  }
+
+  /* Light theme icon colors */
+  .light .stats-icon-dark {
+    color: hsl(0 0% 0%) !important;
+  }
+
+  .light .serve-icon-dark {
+    color: hsl(0 0% 20%) !important;
+  }
+
+  .light .serve-icon-dark {
+    background-color: hsl(0 0% 20%) !important;
+  }
+
+  .light .serve-border-dark {
+    border-color: hsl(0 0% 20%) !important;
+  }
+
+  .light .serve-stroke-dark {
+    stroke: hsl(0 0% 20%) !important;
+  }
+
+  /* Light theme bar graphs - make gradient bars white */
+  .light .bg-gradient-primary {
+    background: hsl(0 0% 100%) !important;
+  }
+
+  /* Light theme progress bars - make gray background white */
+  .light .bg-gray-700 {
+    background-color: hsl(0 0% 100%) !important;
+  }
+
+  /* Light theme pagination dots - make gray dots white */
+  .light .bg-gray-300 {
+    background-color: hsl(0 0% 100%) !important;
+  }
+
+  .light .bg-gray-400 {
+    background-color: hsl(0 0% 90%) !important;
+  }
+
+  .light .bg-gray-600 {
+    background-color: hsl(0 0% 100%) !important;
+  }
+
+  .light .bg-gray-500 {
+    background-color: hsl(0 0% 90%) !important;
+  }
+
+  /* Light theme - hide moving clock on infographic */
+  .light .infographic-clock-icon {
+    display: none !important;
+  }
+
+  /* Light theme testimonial cards */
+  .light .testimonial-card-light {
+    background: hsl(0 0% 100%) !important;
+    border: 2px solid hsl(0 0% 60%) !important;
+  }
+
+  .light .testimonial-icon-dark {
+    background: hsl(0 0% 0%) !important;
+  }
+
+  .light .testimonial-text-dark {
+    color: hsl(0 0% 100%) !important;
+  }
+
+  .light .testimonial-quote-dark {
+    color: hsl(220 13% 15%) !important;
+  }
+
+  .light .testimonial-name-dark {
+    color: hsl(0 0% 0%) !important;
+  }
+
+  .light .testimonial-designation-dark {
+    color: hsl(220 13% 25%) !important;
+  }
+
+  /* Light theme feature icon colors - lighter shade */
+  .light .feature-icon-dark {
+    color: hsl(0 0% 30%) !important;
+  }
+
+  .light .onboarding-icon-dark {
+    color: hsl(0 0% 0%) !important;
+  }
+
+  .light .integration-icon-dark {
+    color: hsl(0 0% 0%) !important;
+  }
+
+  /* Light theme trading infographic borders */
+  .light .algo-trading-border-blue {
+    border-color: hsl(217 91% 60%) !important;
+  }
+
+  .light .metric-left-border-green {
+    border-color: hsl(142 76% 36%) !important;
+  }
+
+  .light .metric-right-border-red {
+    border-color: hsl(0 84% 60%) !important;
+  }
+
+  /* Light theme 15 minutes text */
+  .light .minutes-text-dark {
+    background: hsl(0 0% 0%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: hsl(0 0% 0%) !important;
+  }
+
+  /* Light theme market data card borders */
+  .light .market-data-card {
+    border-color: hsl(0 0% 60%) !important;
+  }
+
+  .light .market-data-card:hover {
+    border-color: hsl(0 0% 50%) !important;
+  }
+
+  /* Light theme section titles - make dark grey (between grey and black) */
+  .light .section-title-dark {
+    background: hsl(0 0% 20%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: hsl(0 0% 20%) !important;
+  }
+
+  /* Light theme card titles - make dark grey (between grey and black) */
+  .light .card-title-dark {
+    color: hsl(0 0% 20%) !important;
+  }
+}
